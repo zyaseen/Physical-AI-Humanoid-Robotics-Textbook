@@ -1,18 +1,18 @@
  {
-    2      "rootDirectory": "frontend/textbook-website",       
-    3      "builds": [
-    4        {
-    5          "src": "frontend/textbook-website/package.json",
-    6          "use": "@vercel/static-build",
-    7          "config": {
-    8            "distDir": "build"
-    9          }
-   10        }
-   11      ],
-   12      "routes": [
-   13        {
-   14          "src": "/(.*)",
-   15          "dest": "/frontend/textbook-website/build/index.html"
-   16        }
-   17      ]
-   18    }
+          "rootDirectory": "frontend/textbook-website",       
+          "builds": [
+            {
+              "src": "frontend/textbook-website/package.json",
+              "use": "@vercel/static-build",
+              "config": {
+                "distDir": "build"
+             }
+           }
+         ],
+         "routes": [
+           {
+             "src": "/(.*)",
+             "dest": "/frontend/textbook-website/build/index.html"
+           }
+         ]
+       }

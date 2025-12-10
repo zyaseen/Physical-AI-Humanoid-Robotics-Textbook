@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 (module.exports = {
   title: 'Physical AI & Humanoid Robotics Textbook',
   tagline: 'A comprehensive guide to Physical AI and Humanoid Robotics',
-  url: 'https://your-website.com', // Replace with your website's URL
+  url: 'https://physical-ai-humanoid-robotics-textbook-by-yaseen-it6jegmjg.vercel.app/', // Replace with your website's URL
   baseUrl: '/',
   trailingSlash: true, // This forces trailing slashes on all routes
          // ... rest of your config
