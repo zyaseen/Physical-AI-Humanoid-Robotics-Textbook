@@ -1,21 +1,22 @@
-
-     {
+{
        "version": 2,
-       "framework": "docusaurus",
-       "rootDirectory": "frontend/textbook-website",       
        "builds": [
          {
            "src": "frontend/textbook-website/package.json",
            "use": "@vercel/static-build",
            "config": {
-            "distDir": "./build"
-          }
+             "distDir": "build"
+           }
         }
       ],
       "routes": [
         {
+          "src": "/([^?]*)\\?(.*)",
+          "dest": "/frontend/textbook-website/build/index.html?query=$2"
+        },
+        {
           "src": "/(.*)",
-          "dest": "/frontend/textbook-website/build/index.html"
+          "dest": "/frontend/textbook-website/build/$1"
         }
       ]
     }
