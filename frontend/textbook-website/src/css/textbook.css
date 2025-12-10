@@ -1,0 +1,149 @@
+/* Custom CSS for Physical AI & Humanoid Robotics Textbook */
+
+.textbook-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.chapter-content {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.table-of-contents {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.table-of-contents h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+}
+
+.table-of-contents ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.table-of-contents li {
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0;
+}
+
+.chapter-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-container h1 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 1rem;
+  margin-top: 0;
+}
+
+.text-selection-highlight {
+  background-color: #ffff99;
+}
+
+.chat-interface {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  max-height: 500px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.chat-header {
+  background-color: #3498db;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  max-height: 350px;
+}
+
+.chat-input-area {
+  padding: 0.75rem;
+  border-top: 1px solid #eee;
+  display: flex;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+.chat-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chat-button:hover {
+  background-color: #2980b9;
+}
+
+.selected-text-popup {
+  position: absolute;
+  background-color: #3498db;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Ensure clean, professional look across all components */
+.markdown-section {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.admonition {
+  border-radius: 4px;
+  margin: 1.5rem 0;
+}
+
+.navbar {
+  background-color: #2c3e50;
+}
+
+.navbar__brand {
+  color: #ecf0f1;
+}
+
+.navbar__link {
+  color: #ecf0f1;
+}
+
+.navbar__link:hover {
+  color: #3498db;
+}

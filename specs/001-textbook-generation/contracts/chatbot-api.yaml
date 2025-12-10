@@ -1,0 +1,160 @@
+# API Contract: RAG Chatbot for Physical AI & Humanoid Robotics Textbook
+
+## Chatbot Query Endpoint
+
+### POST /api/chatbot/query
+
+**Description**: Submit a query to the RAG chatbot and receive a response based on textbook content.
+
+**Request**:
+```json
+{
+  "query": "string (required): The question or query from the user",
+  "context": {
+    "selectedText": "string (optional): Text selected by the user in the textbook",
+    "chapterId": "string (optional): ID of the current chapter",
+    "sessionId": "string (required): Session identifier to group related queries"
+  },
+  "options": {
+    "includeSources": "boolean (optional): Whether to include source chapters in response (default: true)",
+    "maxSources": "integer (optional): Maximum number of source chapters to reference (default: 3)"
+  }
+}
+```
+
+**Response (Success - 200 OK)**:
+```json
+{
+  "id": "string: Unique identifier for this response",
+  "query": "string: Echo of the original query",
+  "response": "string: The chatbot's answer based on textbook content",
+  "sources": [
+    {
+      "chapterId": "string: ID of the referenced chapter",
+      "chapterTitle": "string: Title of the referenced chapter",
+      "relevance": "number: Relevance score between 0 and 1"
+    }
+  ],
+  "timestamp": "string: ISO 8601 timestamp of the response",
+  "sessionId": "string: Session identifier"
+}
+```
+
+**Response (Error - 400 Bad Request)**:
+```json
+{
+  "error": "string: Error message describing the issue",
+  "code": "string: Error code",
+  "details": "object: Additional error details if applicable"
+}
+```
+
+### POST /api/chatbot/query-with-selection
+
+**Description**: Submit a query based on selected text in the textbook.
+
+**Request**:
+```json
+{
+  "selectedText": "string (required): The text selected by the user",
+  "additionalContext": "string (optional): Additional context or question about the selected text",
+  "sessionId": "string (required): Session identifier"
+}
+```
+
+**Response (Success - 200 OK)**:
+```json
+{
+  "id": "string: Unique identifier for this response",
+  "selectedText": "string: Echo of the selected text",
+  "response": "string: The chatbot's explanation or answer",
+  "sources": [
+    {
+      "chapterId": "string: ID of the referenced chapter",
+      "chapterTitle": "string: Title of the referenced chapter",
+      "relevance": "number: Relevance score between 0 and 1"
+    }
+  ],
+  "timestamp": "string: ISO 8601 timestamp of the response",
+  "sessionId": "string: Session identifier"
+}
+```
+
+## Textbook Content Endpoints
+
+### GET /api/textbook/chapters
+
+**Description**: Retrieve a list of all textbook chapters.
+
+**Response (Success - 200 OK)**:
+```json
+{
+  "chapters": [
+    {
+      "id": "string: Unique identifier for the chapter",
+      "title": "string: Title of the chapter",
+      "chapterNumber": "integer: Order of the chapter in the textbook",
+      "slug": "string: URL-friendly identifier",
+      "description": "string: Brief description of the chapter content"
+    }
+  ]
+}
+```
+
+### GET /api/textbook/chapters/{chapterId}
+
+**Description**: Retrieve the content of a specific textbook chapter.
+
+**Parameters**:
+- `chapterId`: string (required) - The ID of the chapter to retrieve
+
+**Response (Success - 200 OK)**:
+```json
+{
+  "id": "string: Unique identifier for the chapter",
+  "title": "string: Title of the chapter",
+  "chapterNumber": "integer: Order of the chapter in the textbook",
+  "slug": "string: URL-friendly identifier",
+  "content": "string: The full content of the chapter in Markdown format",
+  "createdAt": "string: ISO 8601 timestamp of creation",
+  "updatedAt": "string: ISO 8601 timestamp of last update"
+}
+```
+
+## Session Management Endpoint
+
+### POST /api/session/create
+
+**Description**: Create a new user session.
+
+**Request**:
+```json
+{
+  "userAgent": "string (optional): Browser information",
+  "additionalContext": "object (optional): Additional session context"
+}
+```
+
+**Response (Success - 200 OK)**:
+```json
+{
+  "sessionId": "string: Unique identifier for the created session",
+  "timestamp": "string: ISO 8601 timestamp of session creation"
+}
+```
+
+## Validation Rules
+
+1. All string fields with "required" designation must not be null, undefined, or empty
+2. Query length must be between 5 and 500 characters
+3. SessionId must be a valid identifier (alphanumeric + hyphens/underscores)
+4. ChapterId must be a valid identifier from the textbook chapters
+5. All timestamps must be in ISO 8601 format
+
+## Error Codes
+
+- `INVALID_QUERY_LENGTH`: Query is too short or too long
+- `INVALID_CHAPTER_ID`: Chapter with the given ID does not exist
+- `INVALID_SESSION_ID`: Session ID is not valid
+- `RAG_PROCESSING_ERROR`: Error occurred while processing the RAG query
+- `RESOURCE_LIMIT_EXCEEDED`: Free-tier resource limits exceeded

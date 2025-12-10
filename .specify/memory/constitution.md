@@ -1,55 +1,48 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- SYNC IMPACT REPORT
+Version Change: N/A -> 1.0.0
+Modified Principles: N/A (New constitution)
+Added Sections: All principles and sections for Physical AI & Humanoid Robotics textbook
+Removed Sections: N/A
+Templates Requiring Updates:
+- .specify/templates/plan-template.md: ⚠ pending
+- .specify/templates/spec-template.md: ⚠ pending
+- .specify/templates/tasks-template.md: ⚠ pending
+- .specify/templates/commands/*.md: ⚠ pending
+- README.md: ⚠ pending
+Follow-up TODOs: None
+-->
+# Physical AI & Humanoid Robotics — Essentials Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Simplicity
+All textbook content and code examples must prioritize simplicity and clarity above advanced features. Each concept should be explained with minimal jargon and maximum accessibility for students. Complexity must be introduced gradually and only when absolutely necessary for understanding.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Accuracy
+All technical content, code samples, and explanations must be factually accurate and technically correct. Information must be verified against authoritative sources, tested in practice, and kept up-to-date with current technology standards. Erroneous or misleading information is strictly prohibited.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Minimalism
+Textbook chapters and features should follow minimalist design principles. Unnecessary content, redundant explanations, or overly verbose sections must be eliminated. Focus on essential concepts that provide maximum educational value with minimum cognitive overhead.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Fast Builds
+The Docusaurus textbook build process must remain fast and efficient. Build times should not exceed reasonable limits (under 2 minutes for full rebuild). Heavy processing, oversized assets, or inefficient configurations that slow down builds are prohibited without explicit justification.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Free-tier Architecture
+All infrastructure and service choices must remain compatible with free-tier hosting solutions. This includes database services, vector storage, API usage, and computational resources. The RAG system must operate efficiently within free-tier resource constraints.
 
-### [PRINCIPLE_6_NAME]
+### VI. RAG Integrity
+The RAG chatbot must only provide answers derived from the textbook content itself. External hallucinations, fabricated information, or responses outside the scope of book content are strictly forbidden. Answers must be traceable to specific chapters or sections.
 
+## Technical Constraints
 
-[PRINCIPLE__DESCRIPTION]
+The project must maintain low computational resource usage with no heavy GPU requirements. Embeddings must be lightweight and optimized for cost-effective serving. Third-party dependencies should be limited to essential packages only. The system architecture must support smooth deployment to GitHub Pages.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Development Workflow
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+All contributions must undergo rigorous testing of both textbook content accuracy and RAG functionality. Chapter additions require verification of corresponding RAG performance. Code examples must be tested in the target environment before merging. Documentation of setup and deployment procedures must remain current with each change.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution governs all development decisions for the Physical AI & Humanoid Robotics textbook. All pull requests and reviews must verify compliance with these principles. Deviations require explicit approval and documentation of trade-offs. This document follows semantic versioning (MAJOR.MINOR.PATCH format) with amendments requiring team consensus.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-10 | **Last Amended**: 2025-12-10
