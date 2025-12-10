@@ -1,4 +1,20 @@
-  {
-      "rootDirectory": "frontend/textbook-website",
-     "framework": "docusaurus"
-    }
+ 1 {
+    2   "settings": {
+    3     "rootDirectory": "frontend/textbook-website"      
+    4   },
+    5   "builds": [
+    6     {
+    7       "src": "frontend/textbook-website/package.json",
+    8       "use": "@vercel/static-build",
+    9       "config": {
+   10         "distDir": "build"
+   11       }
+   12     }
+   13   ],
+   14   "routes": [
+   15     {
+   16       "src": "/(.*)",
+   17       "dest": "frontend/textbook-website/build/index.html"
+   18     }
+   19   ]
+   20 }
