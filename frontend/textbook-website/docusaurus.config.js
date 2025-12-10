@@ -8,6 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   tagline: 'A comprehensive guide to Physical AI and Humanoid Robotics',
   url: 'https://your-website.com', // Replace with your website's URL
   baseUrl: '/',
+  trailingSlash: true, // This forces trailing slashes on all routes
+         // ... rest of your config
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
