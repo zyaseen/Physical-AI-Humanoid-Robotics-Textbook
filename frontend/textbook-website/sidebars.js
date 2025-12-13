@@ -8,19 +8,19 @@
 
  Create as many sidebars as you want.
  */
-
 module.exports = {
-  textbookSidebar: [
+  defaultSidebar: [
     {
       type: 'category',
       label: 'Physical AI & Humanoid Robotics Textbook',
       items: [
-        '1-introduction-to-physical-ai',
-        '2-basics-of-humanoid-robotics',
-        '3-ros-2-fundamentals',
-        '4-digital-twin-simulation',
-        '5-vision-language-action-systems',
-        '6-capstone-simple-ai-robot-pipeline'
+        'intro',
+        'introduction-to-physical-ai',
+        'basics-of-humanoid-robotics',
+        'ros-2-fundamentals',
+        'digital-twin-simulation',
+        'vision-language-action-systems',
+        'capstone-simple-ai-robot-pipeline',
       ],
     },
   ],

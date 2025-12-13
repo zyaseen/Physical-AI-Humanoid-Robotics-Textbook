@@ -51,7 +51,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
         items: [
           {
             type: 'doc',
-            docId: '1-introduction-to-physical-ai',
+            docId: 'introduction-to-physical-ai',
             position: 'left',
             label: 'Textbook',
           },
@@ -72,15 +72,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
             items: [
               {
                 label: 'Introduction to Physical AI',
-                to: '/docs/1-introduction-to-physical-ai',
+                to: '/docs/introduction-to-physical-ai',
               },
               {
                 label: 'Humanoid Robotics Basics',
-                to: '/docs/2-basics-of-humanoid-robotics',
+                to: '/docs/basics-of-humanoid-robotics',
               },
               {
                 label: 'ROS 2 Fundamentals',
-                to: '/docs/3-ros-2-fundamentals',
+                to: '/docs/ros-2-fundamentals',
               },
             ],
           },

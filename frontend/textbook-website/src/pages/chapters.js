@@ -21,12 +21,12 @@ function ChapterPage() {
             
             <h2>Table of Contents</h2>
             <ul>
-              <li><Link to="/docs/1-introduction-to-physical-ai">1. Introduction to Physical AI</Link></li>
-              <li><Link to="/docs/2-basics-of-humanoid-robotics">2. Basics of Humanoid Robotics</Link></li>
-              <li><Link to="/docs/3-ros-2-fundamentals">3. ROS 2 Fundamentals</Link></li>
-              <li><Link to="/docs/4-digital-twin-simulation">4. Digital Twin Simulation (Gazebo + Isaac)</Link></li>
-              <li><Link to="/docs/5-vision-language-action-systems">5. Vision-Language-Action Systems</Link></li>
-              <li><Link to="/docs/6-capstone-simple-ai-robot-pipeline">6. Capstone: Simple AI-Robot Pipeline</Link></li>
+              <li><Link to="/docs/introduction-to-physical-ai">1. Introduction to Physical AI</Link></li>
+              <li><Link to="/docs/basics-of-humanoid-robotics">2. Basics of Humanoid Robotics</Link></li>
+              <li><Link to="/docs/ros-2-fundamentals">3. ROS 2 Fundamentals</Link></li>
+              <li><Link to="/docs/digital-twin-simulation">4. Digital Twin Simulation (Gazebo + Isaac)</Link></li>
+              <li><Link to="/docs/vision-language-action-systems">5. Vision-Language-Action Systems</Link></li>
+              <li><Link to="/docs/capstone-simple-ai-robot-pipeline">6. Capstone: Simple AI-Robot Pipeline</Link></li>
             </ul>
             
             <div style={{ marginTop: '2rem', padding: '1rem', backgroundColor: '#f0f8ff', borderRadius: '4px' }}>
